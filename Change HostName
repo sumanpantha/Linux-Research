@@ -1,0 +1,46 @@
+https://www.tecmint.com/set-change-hostname-in-centos-7/
+
+
+
+In order to display a computer name in CentOS 7 and RHEL 7 systems via console, issue the following command. The -s flag displayed the computer short name (hostname only) and the -f flag displays the computer FQDN in the network (only if the computer is a part of a domain or realm and the FQDN is set).
+
+[root@localhost ~]# hostname
+[root@localhost ~]# hostname -s
+[root@localhost ~]# hostname -f
+
+
+You can also display a Linux system hostname by inspecting the content of /etc/hostname file using the cat command.
+
+[root@localhost ~]# cat /etc/hostname
+
+In order to change or set a CentOS 7 machine hostname, use the hostnamectl command as shown in the below command excerpt.
+
+[root@localhost ~]# hostnamectl set-hostname your-new-hostname
+
+
+In addition to hostname command you can also use hostnamectl command to display a Linux machine hostname.
+
+[root@localhost ~]# hostnamectl
+
+In order to apply the new hostname, a system reboot is required, issue one of the below commands in order to reboot a CentOS 7 machine.
+
+[root@localhost ~]# init 6
+[root@localhost ~]# systemctl reboot
+[root@localhost ~]# shutdown -r
+
+
+A second method to setup a CentOS 7 machine hostname is to manually edit the /etc/hostname file and type your new hostname. Also, a system reboot is necessary in order to apply the new machine name.
+
+[root@localhost ~]# vi /etc/hostname
+
+A third method that can be used to change a CentOS 7 machine hostname is by using Linux sysctl interface. However, using this method to change machine name results in setting-up the machine transient hostname.
+
+The transient hostname is a special hostname initialized and maintained only by the Linux kernel as an auxiliary machine name in addition to he static hostname and doesn’t survive reboots.
+
+[root@localhost ~]# sysctl kernel.hostname
+[root@localhost ~]# sysctl kernel.hostname=new-hostname
+[root@localhost ~]# sysctl -w kernel.hostname=new-hostname
+To display machine transient hostname issue the below commands.
+
+[root@localhost ~]# sysctl kernel.hostname
+[root@localhost ~]# hostnamectl
