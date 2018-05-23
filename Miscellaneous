@@ -1,4 +1,5 @@
---How to ssh to a server using another server?
+##How to ssh to a server using another server?
+##Currently we are in (192.168.19.130) and wants to login to (192.168.19.131)
 
 [root@centos-mn ~]# ssh root@192.168.19.131
 The authenticity of host '192.168.19.131 (192.168.19.131)' can't be established.
