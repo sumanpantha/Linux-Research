@@ -1,0 +1,10 @@
+--How to ssh to a server using another server?
+
+[root@centos-mn ~]# ssh root@192.168.19.131
+The authenticity of host '192.168.19.131 (192.168.19.131)' can't be established.
+ECDSA key fingerprint is a9:00:64:54:55:12:1d:2b:38:6c:e8:4f:56:62:23:48.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '192.168.19.131' (ECDSA) to the list of known hosts.
+root@192.168.19.131's password: ********
+Last login: Wed May 23 17:06:32 2018 from 192.168.19.132
+[root@datanode2 ~]# 
