@@ -1,0 +1,40 @@
+
+https://www.youtube.com/watch?v=UUkCys309xA
+
+[root@localhost ~]# ping www.google.com
+--ping unknown command 
+[root@localhost ~]# ping 8.8.8.8
+--host unrechable
+
+[root@localhost ~]# ip addr show 
+[root@localhost ~]# ifup eno16777736
+
+[root@localhost ~]# ip addr show
+
+[root@localhost ~]# ping www.google.com
+--successfully ping
+
+for the Permanent changes
+
+Go to the location
+[root@localhost ~]# cd /etc/sysconfig/network-scripts
+
+and change ONBOOT to yes for no
+
+TYPE=Ethernet
+BOOTPROTO=dhcp
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_FAILURE_FATAL=no
+NAME=eno16777736
+UUID=0fe558a8-f8e7-48be-9048-f9a96aba857f
+DEVICE=eno16777736
+ONBOOT=yes
+PEERDNS=yes
+PEERROUTES=yes
+IPV6_PEERDNS=yes
+IPV6_PEERROUTES=yes
+IPV6_PRIVACY=no
