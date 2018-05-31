@@ -13,3 +13,13 @@ Last login: Wed May 23 17:06:32 2018 from 192.168.19.132
 ##Change Time in CentOS 
 
 [root@localhost ~]# timedatectl set-time 10:10:55
+
+
+
+##Change Time zone 
+timedatectl set-timezone Asia/Kathmandu
+
+##Sync datetime with other server 
+
+date --set="$(ssh user@server date)"
+Eg: date --set="$(ssh root@percona3 date)"
