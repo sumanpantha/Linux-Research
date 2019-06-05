@@ -1,0 +1,101 @@
+#https://linuxize.com/post/how-to-setup-ftp-server-with-vsftpd-on-centos-7/#1-ftp-access
+[root@centosmn ~]# yum install vsftpd
+[root@centosmn ~]# systemctl start vsftpd
+[root@centosmn ~]# systemctl enable vsftpd
+[root@centosmn ~]# systemctl status vsftpd
+
+#Step -1
+[root@centosmn ~]# yum install vsftpd ftp
+
+#Step -2
+[root@centosmn ~]# vi /etc/vsftpd/vsftpd.conf
+
+anonymous_enable=NO
+local_enable=YES
+write_enable=YES
+local_umask=022
+dirmessage_enable=YES
+xferlog_enable=YES
+connect_from_port_20=YES
+xferlog_std_format=YES
+ascii_upload_enable=YES
+ascii_download_enable=YES
+listen=NO
+listen_ipv6=YES
+pam_service_name=vsftpd
+userlist_enable=YES
+tcp_wrappers=YES
+
+#Step -3
+[root@centosmn ~]# service vsftpd restart
+
+#Step -4
+[root@centosmn ~]# chkconfig enable vstpd
+
+#Step -5
+[root@centosmn ~]# systemctl enable vsftpd.service
+
+#Step -6
+[root@centosmn ~]# systemctl status vsftpd
+
+#Step -7
+[root@centosmn ~]# yum install firewalld
+
+#Step -8
+[root@centosmn ~]# firwell-cmd --permanent --add-port=21/tcp
+
+#Step -9
+[root@centosmn ~]# service firewalld start
+
+#Step -10
+[root@centosmn ~]# systemctl start firewalld
+
+#Step -11
+[root@centosmn ~]# firewall-cmd --permanent --add-port=21/tcp
+
+#Step -12
+[root@centosmn ~]# firewall-cmd --permanent --add-service=ftp
+
+#Step -13
+[root@centosmn vsftpd]# vi /etc/selinux/config
+
+# This file controls the state of SELinux on the system.
+# SELINUX= can take one of these three values:
+#     enforcing - SELinux security policy is enforced.
+#     permissive - SELinux prints warnings instead of enforcing.
+#     disabled - No SELinux policy is loaded.
+SELINUX=enforcing
+# SELINUXTYPE= can take one of three two values:
+#     targeted - Targeted processes are protected,
+#     minimum - Modification of targeted policy. Only selected processes are protected.
+#     mls - Multi Level Security protection.
+SELINUXTYPE=targeted
+
+#Step -14
+[root@centosmn vsftpd]# getenforce
+
+#Step -15
+[root@centosmn ~]# reboot
+
+#Step -16 
+[root@centosmn ~]# setsebool -P ftp_home_dir on
+
+#Step -17
+[root@centosmn ~]# useradd 8square
+
+#Step -18
+[root@centosmn ~]# passwd 8Square@
+
+#Step -19
+[root@centosmn ~]#  ftp 192.168.19.134
+Connected to 192.168.19.134 (192.168.19.134).
+220 (vsFTPd 3.0.2)
+Name (192.168.19.134:root): 8square
+331 Please specify the password.
+Password:8Square@
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> 
+
+
