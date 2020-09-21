@@ -38,7 +38,11 @@ crontab - e
 min hr day(month) month day(start from monday)
 35 2 * * 5  /usr/bin/mongodump --host 10.0.14.108 --port 27017 -u mmpuser -p mmpuser123 --authenticationDatabase Applicationlog --out /backup
 
-##Find the cron job of other users 
+##List the cron job of other users 
+crontab -l -u <Username>
+
+
+##Edit the cron job of other users 
 crontab -l -u <Username>
 
 
