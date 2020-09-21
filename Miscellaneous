@@ -23,3 +23,22 @@ timedatectl set-timezone Asia/Kathmandu
 
 date --set="$(ssh user@server date)"
 Eg: date --set="$(ssh root@percona3 date)"
+
+##File Size in MB 
+ll -sh --block-size=M
+
+##CronTab
+##List crontab
+crontab - l
+
+##Edit crontab
+crontab - e
+
+##Set Crontab
+min hr day(month) month day(start from monday)
+35 2 * * 5  /usr/bin/mongodump --host 10.0.14.108 --port 27017 -u mmpuser -p mmpuser123 --authenticationDatabase Applicationlog --out /backup
+
+##Find the cron job of other users 
+crontab -l -u <Username>
+
+
