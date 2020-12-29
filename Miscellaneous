@@ -27,11 +27,17 @@ Eg: date --set="$(ssh root@percona3 date)"
 ##File Size in MB 
 ll -sh --block-size=M
 
-# Archive file 
+#Archive File (.tar)
+
+#UnArchive file (.tar)
+tar -xvf file_name.tar
+
+
+# Archive file (.tar.gz)
 #tar -czvf FileName.tar.gz FileToArchive.FileExtension
 tar -czvf percona-mysql-router-8.0.21-12.2.el7.x86_64.rpm.tar.gz percona-mysql-router-8.0.21-12.2.el7.x86_64.rpm
 
-#Un Archive file
+#UnArchive file (.tar.gz)
 tar -xzf percona-mysql-router-8.0.21-12.2.el7.x86_64.rpm.tar.gz
 
 ##Cron Jobs
