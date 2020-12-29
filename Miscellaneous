@@ -42,7 +42,7 @@ crontab - l
 crontab - e
 
 ##Set Crontab
-min hr day(month) month day(start from monday)
+min hr(24hrs) day(month) month day(start from monday)
 35 2 * * 5  /usr/bin/mongodump --host 10.0.14.108 --port 27017 -u mmpuser -p mmpuser123 --authenticationDatabase Applicationlog --out /backup
 
 ##List the cron job of other users 
