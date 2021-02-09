@@ -40,7 +40,7 @@ scp FileName username@IP:/directory
 tar -czvf percona-mysql-router-8.0.21-12.2.el7.x86_64.rpm.tar.gz percona-mysql-router-8.0.21-12.2.el7.x86_64.rpm
 
 #UnArchive file (.tar.gz)
-tar -xzf percona-mysql-router-8.0.21-12.2.el7.x86_64.rpm.tar.gz
+tar -xvzf percona-mysql-router-8.0.21-12.2.el7.x86_64.rpm.tar.gz
 
 ##Cron Jobs
 ##List crontab
