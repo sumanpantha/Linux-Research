@@ -32,6 +32,8 @@ ll -sh --block-size=M
 #UnArchive file (.tar)
 tar -xvf file_name.tar
 
+#Transfer Files between servers
+scp FileName username@IP:/directory
 
 # Archive file (.tar.gz)
 #tar -czvf FileName.tar.gz FileToArchive.FileExtension
