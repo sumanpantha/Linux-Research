@@ -34,6 +34,7 @@ tar -xvf file_name.tar
 
 #Transfer Files between servers
 scp FileName username@IP:/directory
+scp Applicationlog_ArchiveDB.tar.gz gagan@10.0.14.107:/tmp
 
 # Archive file (.tar.gz)
 #tar -czvf FileName.tar.gz FileToArchive.FileExtension
